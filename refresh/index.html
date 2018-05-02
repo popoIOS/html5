@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1.custom/jquery-ui.css"/>
+		<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1.custom/jquery-ui.theme.css"/>
+		<link rel="stylesheet" type="text/css" href="css/JIA01.css"/>
+		<script type="text/javascript">
+			var starY, endY = 0;
+	         var loading = false;
+			$(document).ready(function(){
+				
+//				window.location.href = "jq_scroll_img.html"
+//				$.mobile.changePage("refresh/jq_img.html","slideup");
+				request();
+				$("#header_refresh").hide();
+				$("#footer_refresh").hide();
+				var aa = $("li");
+				aa.each(function(index,value){
+					var obj = aa[index];
+					$(this).find("p").text("我是第"+index+"行");
+				})
+				$("#refresh").on('touchstart',function(e){
+					var touchPositon = e.originalEvent.targetTouches[0];
+					var y = touchPositon.pageY;
+					starY = y;
+				})
+				$("#refresh").on('touchmove',function(e){
+					var pos = e.originalEvent.targetTouches[0];
+					var y = pos.pageY;
+					endY = y;
+					isLoading(starY,endY);
+				})
+			})
+			function isLoading(statrt,end){
+				if (Math.floor(end - statrt) >30) {
+					if(loading == false){
+						loading = true;
+						pullDown($("#header_refresh"));
+					}
+				} else if(Math.floor(end-statrt) < -30){
+					if(loading == false){
+						loading = true;
+						console.log("aaaa");
+						pushUp($("#footer_refresh"));
+					}
+				}
+			}
+			function pullDown(e){
+				e.show();
+				loadingMore(e,true);
+			}
+			function pushUp(e){
+				e.show();
+				loadingMore(e,false);
+			}
+			
+			function loadingMoreData(e){
+				var arra = $("li");
+				if (arra.length >= 45){
+					e.text("数据已经加载完了");
+					return;
+				}
+				request();
+//				for (var i= 0;i<15;i++) {
+//					request();
+//		
+//					arra.length++;
+//				}
+			}
+			
+			function loadingMore(e,isHeader){
+				setTimeout(function(){
+				    e.hide();	
+				    loading = false;
+				    if (isHeader == true) {
+				    		$("li").remove();
+				    		$("#footer_refresh").text("上推加载更多数据");
+				    }
+				    loadingMoreData(e);
+				},2000)
+			}
+			function request(){
+				console.log("FF")
+					$.ajax({
+					type:"post",
+					data:{
+						loginId:"15980859163",
+						password:"111111"
+					},
+					url:"http://www.yanketong.com:90/api/Patient/PatientLogin",
+					async:true,
+					success:function(data){
+						alert("CCCCCC");
+						$.each(data.value, function(key,value){
+//							 console.log(key+"+++++++++++++"+value);
+//							 if (key == "verifyCode") {
+							 		var li = $("<li>").appendTo($("ul"));
+					                 $("<p>").addClass("p").text(key+"+++++++++++++"+value).appendTo(li);
+					                 $("<div>").addClass("grp").appendTo(li);
+//							 } 
+						})
+					},
+					error:function(err){
+						alert("XXXXXX");
+						console.log(err);
+					}
+				});
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="refresh">
+			<div id="header_refresh">下拉刷新页面...</div>
+			<ul>
+				<li>
+					<p>我是第一行</p>
+					<div class="grp"></div>
+				</li>
+				<li>
+					<p>我是第一行</p>
+					<div class="grp"></div>
+				</li>
+				<li>
+					<p>我是第一行</p>
+					<div class="grp"></div>
+				</li>
+				<li>
+					<p>我是第一行</p>
+					<div class="grp"></div>
+				</li>
+				<li>
+					<p>我是第一行</p>
+					<div class="grp"></div>
+				</li>
+				<li>
+					<p>我是第一行</p>
+					<div class="grp"></div>
+				</li>
+				<li>
+					<p>我是第一行</p>
+					<div class="grp"></div>
+				</li>
+			</ul>
+			<div id="footer_refresh">上推加载更多...</div>
+			<a href="jq_img.html">我是一个按钮</a><br>
+			<button id="btn_paker">我是一个按钮</button>
+			
+		</div>
+	</body>
+</html>

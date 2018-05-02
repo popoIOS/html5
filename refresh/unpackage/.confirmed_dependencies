@@ -1,0 +1,14 @@
+{
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "js/jquery-3.2.1.js",
+      "js/jquery-ui-1.12.1.custom/jquery-ui.js",
+      "js/jquery-ui-1.12.1.custom/jquery-ui.css",
+      "js/jquery-ui-1.12.1.custom/jquery-ui.theme.css",
+      "css/JIA01.css"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}

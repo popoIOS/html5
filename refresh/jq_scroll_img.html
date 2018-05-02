@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css"/>
+			<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#imgsc{
+				position: relative;
+				width: 80%;
+				height: 500px;
+				background-color: red;
+				margin: auto;
+			}
+			#aaa ul{
+				list-style:  none;
+			}
+			#aaa li{
+				position: absolute;
+				display: block;
+				float: left;
+			}
+			#aaa img{
+				width: 100%;
+			}
+			#bottom{
+				position: absolute;
+				background-color: gray;
+				bottom: 0px;
+				height: 50px;
+				width: 100%;
+				opacity: 0.7;
+			}
+			#bottom ul{
+				list-style:  none;
+				
+				right: 30px;
+			}
+			#bottom li{
+				display: block;
+				float: left;
+				padding:  0 20px 0 20px;
+				border: 1px solid white;
+				height: 50px;
+				line-height: 50px;
+			}
+		</style>
+		<script type="text/javascript">
+			var n= 0 ;
+			$(function(){
+				
+				$("#aaa li:not(:first-child)").hide();
+				$("#bottom li:first-child").css("background-color","green");
+				var imslist = $("#aaa li");
+				var signList = $("#bottom li");
+				signList.click(function(){
+					var index = $(this).text()-1;
+					n = index
+					console.log(index);
+					signList.css("background-color","gray")
+					imslist.fadeOut(500);
+					imslist.eq(index).fadeIn(500);
+					signList.eq(index).css("background-color","green")
+				})
+				t = setInterval("showImage()",2000);
+				$("#bottom").hover(function(){
+					console.log("end")
+					clearInterval(t)
+				},function(){
+					console.log("satrat")
+					t = setInterval("showImage()",2000);
+				})
+			})
+			function showImage(){
+				n = n >=3 ? 0: ++n;
+				$("#bottom li").eq(n).trigger("click")
+			}
+		</script>
+	</head>
+	<body>
+		<div id="imgsc">
+			<div id="aaa">
+				<ul>
+				<li><img src="img/1.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/4.jpg"/></li>
+			</ul>
+			</div>
+			<div id="bottom">
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

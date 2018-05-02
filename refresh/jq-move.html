@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#cc{
+				position: absolute;
+				width: 30%;
+				float: left;
+				left: -30%;
+			}
+			#content{
+				position: absolute;
+				width: 100%;
+				left: 0px;
+				float: left;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$("li").click(function(){
+                    $("#content").animate({
+                    	    left:"30%"
+                    });
+                    $("#cc").animate({
+                    	    left:"0%"
+                    })
+				});
+				$("#cc li").click(function(){
+					 $("#content").animate({
+                    	    left:"0%"
+                    });
+                    $("#cc").animate({
+                    	    left:"-30%"
+                    })
+                    $.mobile.changePage("jq_moble_other.html","turn")
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="cc">
+			<ul data-role = "listview" data-inset = "true">
+				<li>one</li>
+				<li>two</li>
+				<li>three</li>
+			</ul>
+			<a href="#aaa" class="ui-btn ui-corner-all">btn</a>
+		</div>
+		<div id="content">
+			<ul data-role = "listview" data-inset = "true">
+				<li>cccccccccccccccccccccc</li>
+				<li>cccccccccccccccccccccc</li>
+				<li>cccccccccccccccccccccc</li>
+				<li>cccccccccccccccccccccc</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#ul-solo").click(function(){
+					$.mobile.loading("show",{
+						text:"正在加载...",
+						textVisible: true,
+						theme:"c",
+                        textonly: false,   
+                        html: ""
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="" data-role = "header">
+			<a href="#jq-move.html" class="ui-btn ui-icon-back ui-btn-icon-left">go back</a>
+		</div>
+		<br>
+		<div id="" data-role = "content">
+			<form class="ui-filterable">
+				<input type="text" name="" id="filterBasic-input" value="" data-type = "search"/>
+			</form>
+			<ul data-role = "listview" data-filter = true data-input = "#filterBasic-input">
+				<li>Acmksi</li>
+				<li>Edfcvcbx</li>
+				<li>Rcxghl</li>
+				<li>Lophvm</li>
+				<li>Cnopiy</li>
+				<li>Tsdmvlkm</li>
+			</ul>
+			<br>
+			<fieldset id="" class="ui-grid-b">
+				<div id="" class="ui-block-b">
+					<input type="button" name="" id="" value="Hmm"/>
+				</div>
+				<div id="" class="ui-block-b">
+					<input type="button" name="" id="" value="No"/>
+				</div>
+				<div id="" class="ui-block-b">
+					<input type="button" name="" id="" value="Yes"/>
+				</div>
+				
+			</fieldset>
+			<div id="" class="ui-grid-solo">
+					<input type="button" name="" id="ul-solo" value="More" class="show-page-loading-msg"/>
+			</div>
+		</div>
+		
+		<div id="" data-role = "footer">
+			<div id="" data-role = "navbar" data-iconpos = "top">
+				<ul>
+					<li><a data-icon = "grid" >One</a></li>
+					<li><a data-icon = "star" class= "ui-btn-active">Two</a></li>
+					<li><a data-icon = "gear">Third</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

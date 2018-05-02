@@ -1,0 +1,91 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#page{
+	width: 100%;
+	max-width: 700px;
+	min-width: 300px;
+    position: relative;	
+    margin: auto;
+}
+#doctor_info{
+	width: 100%;
+	height: 250px;
+    background-image: url(../img/bgimg.jpg);
+    color: white;
+}
+#doctor_info_base{
+	height: 200px;
+}
+.ui-block-c{
+	position: relative;
+	top: 50px;
+	text-align: center;
+}
+#doctor_info_img{
+	text-align: center;
+}
+.ui-block-c ul{
+	text-align: left;
+	list-style: none;
+}
+.ui-block-c li{
+	padding: 10px 0 10px 0;
+}
+#doc_pa{
+	position: relative;
+	margin: 30px 30px 15px 30px;
+	width: 40px;
+}
+#mangerPa{
+	height: 20px;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 2px 2px 3px #404040;
+	color: gray;
+}
+#doctor_info_data{
+	height: 50px;
+	float: none;
+}
+#doctor_skill{
+	background-color: white;
+}
+#doctor_skill_header,#doctor_relation_header,#doctor_comment_header{
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	left: 20px;
+}
+#doctor_skill_content,#doctor_relation_content{
+	height: 40px;
+	overflow: hidden;
+	margin: 10px;
+}
+.extend{
+	text-align: center;
+}
+.extend img{
+	width: 20px;
+}
+#doctor_inqiury{
+	margin-top: 20px;
+	background-color: white;
+}
+.ui-block-b{
+	text-align: center;
+}
+#doctor_relationInquery{
+	margin-top: 20px;
+	background-color: white;
+}
+#doctor_relation_grap{
+	width: 100%;
+	background-color: lightgrey;
+	height: 2px;
+}
+#doctor_comment{
+	margin-top: 20px;
+	background-color: white;
+}

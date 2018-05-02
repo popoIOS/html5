@@ -1,0 +1,13 @@
+li{
+	padding: 10px;
+	background-color: orange;
+}
+#refresh_header,#refresh_footer{
+	height: 30px;
+	width: 100%;
+	line-height: 30px;
+	font-size: 14px;
+	color: yellow;
+	text-align: center;
+	background-color: gainsboro;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			/*.tablist-left{
+				width: 30%;
+				display: inline-block;
+			}
+			.tablist-content{
+				width: 55%;
+				display: inline-block;
+				margin-left: 5%;
+				vertical-align: top;
+			}*/
+		</style>
+	</head>
+	<body>
+	<!--<a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Basic Popup</a>-->
+    <!--<div data-role="popup" id="popupBasic">
+         <p>This is a completely basic popup, no options set.</p>
+    </div>-->
+    
+    <a href="#popupBase" data-rel = "popup" data-transition = "turn" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">popView</a>
+    <div data-role = "popup" id="popupBase">
+    	     <p>SB</p>
+    </div>
+    <div >
+<!--        <label for="slider-4">slider</label>-->
+        <input type="range" name="" id="slider-2" value="" data-mini = "true" min="0" max="100" data-highlight = "true"style="color: red;"/>
+    </div>
+    
+    <h2>左列表</h2>
+    <div id="" data-role = "tabs">
+    	<div id="" data-role = "navbar">
+    		<ul data-role = "listview" data-inset = "true" class="tablist-left">
+    	    	    <li><a href="#one">AAAA</a></li>
+    	    	    <li><a href="#two">bbbb</a></li>
+    	    	    <li><a href="#three">CCCC</a></li>
+    	    	    <li><a href="#four">DDDD</a></li>
+    	    </ul>
+    	</div>
+    	    
+    	    <div id="one" class="tablist-content">
+    	    	   <h2>this is one</h2> 
+    	    </div>
+    	    <ul id="two" data-role = "listview" class="tablist-content">
+    	      	<li>111111</li>
+    	      	<li>222222</li>
+    	      	<li>333333</li>
+    	    </ul>
+    	    <ul id="three" data-role = "listview" class="tablist-content">
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    	    <li>qqqqq</li>
+    	    </ul>
+    </div>
+    
+    <div id="">
+    	    <label for="name">用户名</label>
+    	    <input type="text" name="name" id="name" value="" />
+    </div>
+    
+	</body>
+</html>

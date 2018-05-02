@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	    <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css"/>
+	    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	    $(function(){
+                 $("#btnFormSumit").click(function(){
+                 	console.log("AAAAAAA");
+                 })
+                 $(window).on("orientationchange",function(e){
+                 	if (e.orientation == "portrait") {
+                 		console.log("AAAAAAAAA");
+                 		$("#header").css("background-color","red");
+                 	} else{
+                 		console.log("CCCCCCCCCC");
+                 		$("#header").css("background-color","yellow");
+                 	}
+                 })
+	    	    })
+	    	    $(document).on("pagebeforecreate",function(){
+                console.log("before")
+            })
+            $(document).on("pagecreate",function(){
+                console.log("pagecreat")
+            })
+            $(document).on("pageinit",function(){
+                console.log("init")
+            })
+	    </script>
+	</head>
+	<body>
+        
+		
+	    <!--<div data-role = "page" id="pageOn">
+	    	     <h3>我是头</h3>
+	    	     <a href="#pageTwo" data-transition = "turn">跳转第二个页面</a>
+	    	     <h3>我是尾</h3>
+	    	     <a href="#" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">我是A</a>
+
+	    	     <input data-role = "button" id="" value="我是Input" />
+	    </div>
+		
+		<div data-role = "page" id="pageTwo">
+			<h3>我是头</h3>
+	    	     <a href="#pageOn" data-transition = "pop">返回第一个页面</a>
+	    	     <h3>我是尾</h3>
+	    </div>-->
+		<div data-role = "header" id="header">
+			<h3>我是头部</h3>
+		</div>
+		<div data-role = "content" >
+			<form action="" method="post">
+				<div data-role = "content" data-theme = "e">
+			          <div data-role="collapsible">
+                          <h3>点击我 - 我可以折叠！</h3>
+  	                      <ul data-role = "listview" data-autodividers = "ture" data-filter = "ture">
+				               <li><a href="#">测试 <span class="ui-li-count">25</span></a></li>
+					           <li><a href="#">测试 <span class="ui-li-count">25</span></a></li>
+				               <li><a href="#">测试 <span class="ui-li-count">25</span></a></li>
+					           <li><a href="#">测试 <span class="ui-li-count">25</span></a></li>
+				         </ul>
+                      </div>
+		        </div>
+				<label for="fram">姓名:</label>
+				<input type="text" name="" id="" value="" placeholder="请输入姓名" required="required"/>
+				<label>生日</label>
+				<input type="date" name="" id="" value="" />
+				<label>邮箱</label>
+				<input type="email" name="" id="" value="" placeholder="请输入邮箱"/>
+				<label>简介</label>
+				<textarea name="" rows="15" cols=""></textarea>
+				<label>搜索</label>
+				<input type="search" name="" id="" value="" />
+				<fieldset data-role = "controlgroup" data-type = "horizontal">
+					<legend>请选择性别</legend>
+					<label for="mam">男</label>
+					<input type="checkbox" name="color" id="mam" value="man" />
+					<label for="woman">女</label>
+					<input type="checkbox" name="color" id="woman" value="woman" />
+					<label for="red">流</label>
+					<input type="checkbox" checked="" name="color" id="red" value="red" />
+				</fieldset>
+				<fieldset data-role = "fieldcontain">
+					<legend>请选择周几</legend>
+					<select name="day" data-native-menu="false" multiple="multiple">
+						<optgroup label="工作日"></optgroup>
+						<option value="mon">周一</option>
+						<option value="th">周二</option>
+						<option value="ma">周三</option>
+						<option value="f">周四</option>
+						<optgroup label="周末"></optgroup>
+						<option value="f">周五</option>
+						<option value="s">周六</option>
+					</select>
+				</fieldset>
+				<fieldset id="">
+					<label>开关</label>
+				    <select name="swift" data-role = "slider">
+					      <option value="off">关</option>
+					      <option value="on">开</option>
+				    </select>					
+				</fieldset>
+				<input type="submit" data-inline = "true" value="提交" id="btnFormSumit" data-icon = "info"/>
+			</form>
+		</div>
+		<div data-role = "footer">
+			<ul data-role = "listview">
+				<li>aaa</li>
+				<li>aaa</li>
+				<li>aaa</li>
+				<li>aaa</li>
+				<li>aaa</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,60 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#page{
+	position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+#header_01{
+	background-color: white;
+	/*margin: 1px 10px 1px 10px;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#header_01 h3{
+	margin-left: 10px;
+}
+/*疾病列表*/
+#deaseList ul > li{
+	height: 20px;
+}
+#deaseList li > p{
+	margin: 0px;
+	font-size: 17px;
+}
+/*功能*/
+#depHomeFeature{
+	margin-top: 10px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+}
+.itemForDep{
+	width: 33%;
+	background-color: white;
+}
+
+/*左右滑动列表*/
+.gallery {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+  -ms-scroll-snap-type: mandatory;
+  -ms-scroll-snap-points-x: repeat(100%);
+}
+
+.gallery a {
+	display: inline-block;
+	width: 30%;
+	height: 300px;
+	background-color: red;
+}
